@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: twitterapp_production
-  username: victorhugo
-  password: awl4FULF2exrZ
+  username: twitterapp
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
