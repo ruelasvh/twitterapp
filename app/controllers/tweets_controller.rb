@@ -3,39 +3,21 @@ class TweetsController < ApplicationController
 
   # GET /tweets
   def index
-    @tweets = Tweet.all
+    @tweets = @current_user.tweets
 
     render json: @tweets
   end
 
-  # GET /tweets/1
-  def show
-    render json: @tweet
-  end
-
-  # POST /tweets
+  # POST /tweet
   def create
     @tweet = Tweet.new(tweet_params)
+    @tweet.user = @current_user
 
     if @tweet.save
-      render json: @tweet, status: :created, location: @tweet
+      render json: {message: 'Your tweet has been posted!'}, status: :created, location: @tweet
     else
       render json: @tweet.errors, status: :unprocessable_entity
     end
-  end
-
-  # PATCH/PUT /tweets/1
-  def update
-    if @tweet.update(tweet_params)
-      render json: @tweet
-    else
-      render json: @tweet.errors, status: :unprocessable_entity
-    end
-  end
-
-  # DELETE /tweets/1
-  def destroy
-    @tweet.destroy
   end
 
   private
