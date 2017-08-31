@@ -20,6 +20,8 @@ gem 'puma', '~> 3.7'
 gem 'bcrypt', '~> 3.1.7'
 # Use JWT for encoding and decoding JWT tokens
 gem 'jwt'
+# Used for authenticating users
+gem 'simple_command'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
