@@ -6,7 +6,7 @@ class RegistrationController < ApplicationController
     if command.success?
       render json: { message: 'Successfully created user' }, status: :created
     else
-      render json: { error: command.errors }, status: :ok
+      render json: { error: command.errors }, status: :unprocessable_entity
     end
   end
 end
