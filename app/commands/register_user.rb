@@ -12,8 +12,6 @@ class RegisterUser
 
   private
 
-  attr_accessor :email, :password
-
   def user
     user = User.create(email: @email, password: @password)
     if user.save
