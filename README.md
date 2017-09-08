@@ -14,13 +14,13 @@ rspec
 How to use this application:
 
 POST /register
-curl -X POST http://www.mydomain.com/register -d "email=example@mail.com&password=123123123"
+curl -X POST https://immense-thicket-79088.herokuapp.com/register -d "email=example@mail.com&password=123123123"
 
 POST /auth/login
-curl -X POST http://www.mydomain.com/auth/login -d "email=example@mail.com&password=123123123"
+curl -X POST https://immense-thicket-79088.herokuapp.com/auth/login -d "email=example@mail.com&password=123123123"
 
 POST /tweet
-curl -H "Content-Type: application/json" -H "Authorization: Bearer #{YOUR_API_TOKEN}" -X POST http://www.mydomain.com/tweet -d '{"message":"I love tweeting"}'
+curl -H "Content-Type: application/json" -H "Authorization: Bearer #{YOUR_API_TOKEN}" -X POST https://immense-thicket-79088.herokuapp.com/tweet -d '{"message":"I love tweeting"}'
 
 GET /tweets
-curl -H "Authorization: Bearer #{YOUR_API_TOKEN}" -X GET http://www.mydomain.com/tweets
+curl -H "Authorization: Bearer #{YOUR_API_TOKEN}" -X GET https://immense-thicket-79088.herokuapp.com/tweets
