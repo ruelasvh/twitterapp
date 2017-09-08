@@ -1,24 +1,26 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Token‐based authentication API that creates a new Tweet to your Twitter account via API.
 
-Things you may want to cover:
+* Rails version
+5.1.3
 
 * Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
+2.4.1
 
 * How to run the test suite
+rspec
 
-* Services (job queues, cache servers, search engines, etc.)
+How to use this application:
 
-* Deployment instructions
+POST /register
+curl -X POST http://www.mydomain.com/register -d "email=example@mail.com&password=123123123"
 
-* ...
+POST /auth/login
+curl -X POST http://www.mydomain.com/auth/login -d "email=example@mail.com&password=123123123"
+
+POST /tweet
+curl -H "Content-Type: application/json" -H "Authorization: Bearer #{YOUR_API_TOKEN}" -X POST http://www.mydomain.com/tweet -d '{"message":"I love tweeting"}'
+
+GET /tweets
+curl -H "Authorization: Bearer #{YOUR_API_TOKEN}" -X GET http://www.mydomain.com/tweets
