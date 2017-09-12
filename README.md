@@ -1,6 +1,6 @@
 # README
 
-Token‐based authentication API that creates a new Tweet to your Twitter account via API.
+Token‐based authentication API that creates a new Tweet (example) to your Twitter account via API.
 
 * Rails version
 5.1.3
