@@ -3,9 +3,9 @@ class TweetsController < ApplicationController
 
   # GET /tweets
   def index
-    @tweets = @current_user.tweets
+    @tweets = @current_user.tweets.select('message, created_at').as_json(:except => :id)
 
-    render json: @tweets
+    render json: @tweets, status: :ok
   end
 
   # POST /tweet
